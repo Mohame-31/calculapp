@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- شاشة الترحيب -->
+    <div id="splash-screen" class="screen active">
+        <h1>Welcome to the App</h1>
+        <p>Enjoy our features!</p>
+    </div>
+
+    <!-- شاشة تسجيل الدخول -->
+    <div id="login-screen" class="screen">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Enter Username">
+        <input type="password" id="password" placeholder="Enter Password">
+        <p id="error-message" style="color: red;"></p>
+        <button onclick="validateLogin()">Login</button>
+    </div>
+
+    <!-- شاشة الترحيب بعد تسجيل الدخول -->
+    <div id="welcome-screen" class="screen">
+        <h2 id="welcome-message">Welcome, User!</h2>
+        <button onclick="showCalculator()">Go to Calculator</button>
+    </div>
+
+    <!-- شاشة الآلة الحاسبة -->
+    <div id="calculator-screen" class="screen">
+        <h2>Calculator</h2>
+        <input type="text" id="calc-display" readonly>
+        <div class="calculator">
+            <button onclick="pressButton('7')">7</button>
+            <button onclick="pressButton('8')">8</button>
+            <button onclick="pressButton('9')">9</button>
+            <button onclick="pressButton('/')">÷</button>
+
+            <button onclick="pressButton('4')">4</button>
+            <button onclick="pressButton('5')">5</button>
+            <button onclick="pressButton('6')">6</button>
+            <button onclick="pressButton('*')">×</button>
+
+            <button onclick="pressButton('1')">1</button>
+            <button onclick="pressButton('2')">2</button>
+            <button onclick="pressButton('3')">3</button>
+            <button onclick="pressButton('-')">-</button>
+
+            <button onclick="clearCalc()">C</button>
+            <button onclick="pressButton('0')">0</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="pressButton('+')">+</button>
+        </div>
+        <button onclick="toggleTheme()">Toggle Theme</button>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

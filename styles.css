@@ -1,0 +1,166 @@
+/* إعدادات عامة */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    transition: background 0.5s ease-in-out;
+}
+
+/* الشاشات */
+.screen {
+    display: none;
+    width: 90%;
+    max-width: 400px; /* يناسب الأجهزة الصغيرة */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.screen.active {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* نصوص */
+h1, h2 {
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+button {
+    margin: 10px 0;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #4ca1af, #2c3e50);
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* زر تسجيل الخروج */
+.logout-btn {
+    background-color: #e74c3c;
+    margin-top: 20px;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+/* إدخالات المستخدم */
+input[type="text"], input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    box-shadow: 0 0 10px rgba(76, 161, 175, 0.8);
+    outline: none;
+}
+
+/* الآلة الحاسبة */
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 أعمدة */
+    gap: 10px;
+}
+
+.calculator button {
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    background: #34495e;
+    color: white;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.calculator button:hover {
+    transform: translateY(-3px);
+    background: #5dade2;
+}
+
+/* عرض الشاشة الخاصة بالآلة الحاسبة */
+#calc-display {
+    grid-column: span 4; /* يمتد العرض على الأعمدة الأربعة */
+    padding: 20px;
+    font-size: 28px;
+    text-align: right;
+    border-radius: 10px;
+    background: #2c3e50;
+    color: white;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* الوضع الداكن والفاتح */
+body.light {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: black;
+}
+
+body.light .screen {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+body.light button {
+    background: linear-gradient(135deg, #c3cfe2, #f5f7fa);
+    color: black;
+}
+
+body.light input[type="text"], body.light input[type="password"] {
+    background: rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .screen {
+        max-width: 100%; /* يناسب الأجهزة الأصغر */
+    }
+
+    .calculator button {
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    #calc-display {
+        font-size: 24px;
+    }
+}
